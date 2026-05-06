@@ -22,7 +22,7 @@ namespace MuseumApp.Services
         public void AddExhibit(Guid hallId, Exhibit exhibit)
         {
             if (_data.Halls.Any(h => h.Items.Any(i => i.InventoryNumber == exhibit.InventoryNumber)))
-                throw new Exception("Экспонат с таким номером уже существует.");
+                throw new Exception("Експонат з таким номером вже існує.");
 
             var hall = _data.Halls.FirstOrDefault(h => h.Id == hallId);
             if (hall != null)
@@ -90,7 +90,7 @@ namespace MuseumApp.Services
                     return;
                 }
             }
-            throw new Exception("Экспонат не найден.");
+            throw new Exception("Експонат не знайдено.");
         }
 
         public void RemoveHall(Guid hallId)
